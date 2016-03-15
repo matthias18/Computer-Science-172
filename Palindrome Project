@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <stack>
+using namespace std;
+
+bool isPalindrome(string wordstring, string songstring)
+{
+	stack<char> black;
+	//push in first letter
+	for (int a = 0; a < wordstring.size(); a++)
+	{
+		black.push(wordstring[a]);
+	}
+
+	bool is_Palindrome = 0;
+
+	int index = 0;
+
+	while (!black.empty())
+	{
+		if (black.top() == songstring[index])
+		{
+			is_Palindrome = 1;
+			black.pop();
+			index++;
+			continue;
+		}
+		else
+		{
+			is_Palindrome = 0;
+			break;
+		}
+	}
+
+	if (!is_Palindrome)
+		return false;
+	else
+		return true;
+}
+
+int main()
+{
+	cout << "Results: \n" << endl;
+	string a = "bool";
+	string b = "loob";
+	string c = "blase";
+	string d = "esalb";
+	string e = "esalc";
+	bool test1 = isPalindrome(a, b);
+	bool test2 = isPalindrome(c, d);
+	bool test3 = isPalindrome(c, e);
+
+	cout << "1: "<< test1 << endl;
+	cout << "1: "<< test2 << endl;
+	cout << "0: "<< test3 << endl;
+
+	return 0;
+}
