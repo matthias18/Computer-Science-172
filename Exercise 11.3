@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	int ArraySize;
+	const int* pSize = &ArraySize; 
+	char LetterArray[pSize];
+	cout << "Please enter the capacity for the alphabet array. " << endl;
+	cin >> ArraySize; 
+	return 0; 
+}
